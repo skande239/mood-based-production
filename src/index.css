@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .mood-card {
+    @apply bg-white/20 backdrop-blur-lg rounded-xl p-4 sm:p-6 shadow-lg border border-white/30 transition-all duration-300 hover:bg-white/30 hover:scale-105;
+  }
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg;
+  }
+
+  .btn-primary {
+    @apply px-3 sm:px-4 py-2 bg-white/20 text-white rounded-lg border border-white/30 hover:bg-white/30 transition-all duration-200 backdrop-blur-sm text-sm sm:text-base min-h-[44px] touch-manipulation;
+  }
+
+  .btn-secondary {
+    @apply px-3 sm:px-4 py-2 bg-black/20 text-white rounded-lg border border-black/30 hover:bg-black/30 transition-all duration-200 backdrop-blur-sm text-sm sm:text-base min-h-[44px] touch-manipulation;
+  }
+
+  .emoji-selector {
+    @apply text-4xl cursor-pointer hover:scale-125 transition-transform duration-200 p-2 rounded-full hover:bg-white/20;
+  }
+
+  .habit-progress {
+    @apply w-full bg-white/20 rounded-full h-2 overflow-hidden;
+  }
+
+  .habit-progress-bar {
+    @apply h-full bg-gradient-to-r from-green-400 to-blue-500 transition-all duration-500 ease-out;
+  }
+
+  .timer-circle {
+    @apply w-32 h-32 border-4 border-white/30 rounded-full flex items-center justify-center text-2xl font-bold text-white relative;
+  }
+
+  .timer-progress {
+    @apply absolute inset-0 rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .glow {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse-glow {
+    from {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3);
+    }
+  }
+}
